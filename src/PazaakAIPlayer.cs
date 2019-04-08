@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pazaak
 {
     class PazaakAIPlayer : IPazaakPlayer
     {
+        /// <summary>
+        /// uses a + card if it gets the field value to exactly 20
+        /// uses a - card if it has exceeded 20
+        /// always stops at >17
+        /// </summary>
         private int FieldSizeToStand = 17;
         public string Name()
         {

@@ -62,6 +62,7 @@ namespace Pazaak
             var firstCards = cardsLeft ?? new List<string>();
             var nextCards = cardsRight ?? new List<string>();
             var width = 4;
+
             //The top part
             var topLine = "║";
             for (int i = 0; i < width; i++)
@@ -83,9 +84,11 @@ namespace Pazaak
                 middleLine += (firstCards.Count >= i + 1) ? $"│{firstCards.ElementAt(i)}│" : "    ";
             }
             middleLine += "║";
+            //@TODO: hideOpponentsValues assumes that P2 is always the AI player.
+            //it should somehow evaluate if player 1 OR 2 is AI (if both are, nothing needs to be hidden)
             for (int i = 0; i < width; i++)
             {
-                middleLine += (nextCards.Count >= i + 1) ? ((hideOpponentsValues) ? "│  │" : $"│{nextCards.ElementAt(i)}│") : "    ";
+                middleLine += (nextCards.Count >= i + 1) ? (hideOpponentsValues ? "│  │" : $"│{nextCards.ElementAt(i)}│") : "    ";
             }
             middleLine += "║";
             result.AppendLine(middleLine);

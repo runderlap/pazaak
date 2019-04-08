@@ -176,7 +176,7 @@ namespace Pazaak
         private PlayerStatus GetPlayer1()
         {
             return new PlayerStatus {
-                Player = new PazaakAIPlayerSmarter(),
+                Player = new PazaakHumanPlayer(),
                 FieldCards = new List<int>(),
                 HandCards = PopulateHandCards(),
                 Stand = false,
@@ -189,7 +189,7 @@ namespace Pazaak
         {
             return new PlayerStatus
             {
-                Player = new PazaakHumanPlayer(),
+                Player = new PazaakAIPlayerSmarter(),
                 FieldCards = new List<int>(),
                 HandCards = PopulateHandCards(),
                 Stand = false,

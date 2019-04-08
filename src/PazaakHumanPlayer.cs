@@ -81,7 +81,7 @@ namespace Pazaak
                 {
                     w($"{option.Key}) {option.Value}");
                 }
-                userInput = Console.ReadKey().KeyChar.ToString().ToLowerInvariant();
+                userInput = Console.ReadKey(true).KeyChar.ToString().ToLowerInvariant();
                 if (options.ContainsKey(userInput))
                 {
                     validInput = true;
@@ -91,6 +91,7 @@ namespace Pazaak
                     w($"'{userInput}' is not a valid choice.");
                 }
             }
+            w($">{userInput}");
             return userInput;
         }
 

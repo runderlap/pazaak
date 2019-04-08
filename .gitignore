@@ -5,3 +5,6 @@
 /src/obj
 /src/bin/Release
 /src/.vs/Pazaak/v15
+/.vs
+/src/.vs/Pazaak/v16
+/src/bin/Debug
